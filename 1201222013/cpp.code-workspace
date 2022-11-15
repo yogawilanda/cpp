@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "G:/Coding/cppproject"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.dart": "dart",
+			"type_traits": "cpp",
+			"ostream": "cpp"
+		}
+	}
+}
