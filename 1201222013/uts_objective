@@ -1,0 +1,57 @@
+1.	Mahasiswa dapat menjelaskan :
+
+	Variabel, Konstanta, Tipe Data, Operator, Sintaks, Assignment, Ekspresi
+	Notasi algoritmik, pseudocode, flowchart, dan kalimat deskriptif
+
+
+1. Variable adalah sebuah tipe data yang telah diberikan makna/value sehingga nama tersebut dapat dipanggil.
+
+2. Konstanta adalah sebuah wadah untuk menyimpan sebuah nilai yang bersifat tetap selama aplikasi tersebut dijalankan.
+    berbeda dengan variabel, variabel nilainya dapat berubah sewaktu waktu.
+    
+    
+    
+3. Tipe Data adalah sebuah data yang dapat menyimpan sebuah nilai berdasarkan aturan jenis data yang ada.
+
+4. Operator adalah sebuah perwakilan perintah yang berbentuk simbol untuk membuat perintah matematis dan logis kepada komputer.
+    jenisnya: 
+    aritmatik 
+    + (penambahan), contohnya a = 5 + 2
+    – (pengurangan), contohnya a = 5 – 2
+    * (perkalian), contohnya a = 5 – 2
+    / (pembagian dalam bilangan real atau pecahan), contohnya a = 5 – 2
+    % (sisa hasil bagi atau modulus), contohnya a = 5 % 2, penugasan/Assignment, 
+
+    Assignment/Penugasan
+    = Sama dengan
+    
+    Increment & Decrement
+    {data}++
+
+    Perbandingan
+    && dan 
+    || atau
+    ! Not
+
+    Ternary
+    Kondisi If else
+
+    Bitwise
+    >> Right Shift
+    & And
+    | Or
+
+
+
+
+====
+2.	Mahasiswa dapat menjelaskan :
+	Masukan (input) dan keluaran (output) dalam bahasa C/C++
+	Percabangan if dan percabangan switch-case
+	Perulangan for, while, dan repeat
+	Prosedur dan fungsi
+
+
+3.	Mahasiswa dapat memperlihatkan hasil program dengan baik dan benar
+
+3.	Membuat flowchart pembelian tiket pesawat dan program pembelian tiket pesawat dengan bahasa pemograman C++, menjelaskan ? 
