@@ -12,7 +12,7 @@ void kalkulasi() {
     switch (pilihan)
     {
     case '+':
-        cout << "Kalkulasi Penjumlahan (angka pertama) [spasi] (angka kedua)"<< endl; 
+        cout << "Kalkulasi Penjumlahan (angka pertama) [spasi] (angka kedua)" << endl; 
         cin >> angka1 >> angka2;
         cout << "Hasilnya "<< angka1 + angka2;
         break;
@@ -32,7 +32,7 @@ void kalkulasi() {
     case '*':
         cout << "Kalkulasi Perkalian (angka pertama) [spasi] (angka kedua)"<< endl; 
         cin >> angka1 >> angka2;
-        cout << "Hasilnya "<< angka1 * angka2;
+        cout << "Hasilnya " << angka1 * angka2;
         break;
     
     default:

@@ -1,0 +1,18 @@
+Table Lion Air
+ekonomi 12.00, 13.00, 15.00, 17.00
+bisnis 12.00, 13.00, 15.00, 17.00
+eksekutif 12.00, 13.00, 15.00, 17.00
+
+Table Citilink
+ekonomi 12.00, 13.00, 15.00, 17.00
+bisnis 12.00, 13.00, 15.00, 17.00
+eksekutif 12.00, 13.00, 15.00, 17.00
+
+Table Garuda
+ekonomi 12.00, 13.00, 15.00, 17.00
+bisnis 12.00, 13.00, 15.00, 17.00
+eksekutif 12.00, 13.00, 15.00, 17.00
+
+dimensi 1 Jam
+dimensi 2 Kelas
+dimensi 3 Maskapai
