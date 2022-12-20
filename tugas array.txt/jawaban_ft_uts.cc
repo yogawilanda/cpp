@@ -140,7 +140,6 @@ int main()
 {
     judul();
     menuUtama();
-    // clearScreen();
 }
 
 // Output Halaman Penampil data berdasarkan array
@@ -322,8 +321,6 @@ void konfirmasi() { (stringPilihan == "Ya" || "ya") ? menuUtama() : registrasi()
 // Untuk menghapus output yang sudah tidak diperlukan
 void clearScreen() { system("CLS"); };
 
-void exit() { exit(); };
-
 // Alur Pemesanan Tiket
 void pemesananTiket()
 {
@@ -475,9 +472,9 @@ void pemesananTiket()
     else if (destinasi == "Array" || destinasi == "3")
     {
         clearScreen();
-        inputPemesanan();
         cout << "Pemesanan berdasarkan kode penerbangan \n\n"
              << "Masukan maskapai, kelas, dan kode penerbangan\n\n";
+        inputPemesanan();
 
         
         
@@ -716,9 +713,6 @@ void pemesananCityCGKDPS3()
 
     kalkulasiPemesanan();
 };
-
-// Todo: Pemesanan Global Internasional
-// -------- //
 
 // Pemesanan Bagian Domestik Bali
 void pemesananLionDPSSUB1()

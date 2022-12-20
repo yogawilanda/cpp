@@ -1,0 +1,8 @@
+Tugas buat aplikasi antrian 
+dengan stack dan queue
+
+2 aplikasi
+
+1. Membuat/Menambah Antrian
+2. Memanggil Antrian (Menghapus antrian)
+3. Jumlah Antrian + Nomor yang tersedia

@@ -1,0 +1,9 @@
+Pengertian Pointer
+
+Setiap variable memiliki address yang bisa di dilihat dengan menambahkan "&" di depan variable
+Pointer adalah variabel yang menyimpan address
+
+
+Deklarasi Pointer
+
+*namaVariabel

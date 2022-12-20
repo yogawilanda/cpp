@@ -45,7 +45,7 @@ int main () {
 
     cout<<"JENIS PENYAKIT JANTUNG"<<endl<<"     JANTUNG KOLONEL "<<endl<<"     JANTUNG NOT RESPONDING"<<endl<<"     JANTUNG NICE TRY"<<endl;
         cin>>jenis;
-        jenis ?  (1 ? "Anda Sehat" : "Tidak") : (2 == "halo");
+        (jenis) ?  (1 ? "Anda Sehat" : "Tidak") : (2 ? "halo" : "u");
 
         cout<<jenis;
 
