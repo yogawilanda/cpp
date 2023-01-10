@@ -66,7 +66,6 @@ void inputManualQueue()
     for (int antrian = 0; antrian < 5; antrian++)
     {
         nomorAntrian.push(antrian);
-        // nomorAntrian.pop();
     }
 
     // todo: fix nama harus berubah ketika update
@@ -84,7 +83,7 @@ void qeueApp()
 {
     antrianWQ.push(daftarNama);
 
-    cout << "Pelayanan Cek Kanker RS Sehat Itu Imajinasi\n"
+    cout << "Pelayanan Cek Kanker RS Sehat Itu Imajinasi menggunakan struct\n"
          << "1. Daftar Antrian\n"
          << "2. Panggil Antrian\n"
          << "3. Cek Jumlah Antrian\n"

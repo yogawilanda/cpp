@@ -104,14 +104,9 @@ void qeueApp()
     case 2:
         cout << "Cek Antrian\n";
         cout <<  tempNama.front() << endl;
-
-        cout << "Ingin menghapus data?\n";
+        tempNama.pop();
         
-        cin >> ulang;
-
-        (ulang == 'y') ? tempNama.pop() : qeueApp();
-        
-        break;
+        // break;
 
     case 3:
         cout << "Jumlah Antrian\n";
