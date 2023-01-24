@@ -11,9 +11,9 @@ int main()
    // -- input -- //
 
    // Nim
-   printf("NIM Anda: \n");
-   int NIM;
-   scanf("%d", &NIM);
+   printf("nim Anda: \n");
+   int nim;
+   scanf("%d", &nim);
    
    // Nama
    printf("Nama Anda: \n");
@@ -49,8 +49,8 @@ int main()
 
    printf("------- HASIL --------\n");
 
-   // NIM
-   printf("1. NIM:%d\n", NIM);
+   // nim
+   printf("1. nim:%d\n", nim);
 
    // Nama
    printf("2. Nama:%s\n", nama);

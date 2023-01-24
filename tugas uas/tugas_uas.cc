@@ -1,11 +1,57 @@
+#include <cstdlib>
 #include <iostream>
 
 using namespace std;
 
-struct node{
+struct Node
+{
     int data;
-    struct node *next;
+    struct Node *next;
 };
+
+void printAll(Node *temp)
+{
+    while (temp != NULL)
+    {
+        cout << temp->data;
+        temp = temp->next;
+    }
+}
+
+void initializeNode()
+{
+
+    int no1, no2, no3;
+    /* Initialize nodes */
+    struct Node *head;
+    struct Node *one = NULL;
+    struct Node *two = NULL;
+    struct Node *three = NULL;
+
+    /* Allocate memory */
+    one = (Node *)malloc(sizeof(Node));
+    two = (Node *)malloc(sizeof(Node));
+    three = (Node *)malloc(sizeof(Node));
+
+    cin >> no1;
+    cin >> no2;
+    cin >> no3;
+
+    /* Assign data values */
+    one->data = no1;
+    two->data = no2;
+    three->data = no3;
+
+    /* Connect nodes */
+    one->next = two;
+    two->next = three;
+    three->next = NULL;
+
+    /* Save address of first node in head */
+    head = one;
+    cout << "initialized List: ";
+    printAll(head);
+}
 
 int main()
 {
@@ -26,7 +72,11 @@ int main()
     switch (pINT)
     {
     case 1:
-        cout << "================= Daftar Barang ===================\n";
+        cout << "================= Daftar Barang ===================\n"
+             << "Masukkan Daftar Barang yang diinginkan";
+            initializeNode();
+             
+
         break;
     case 2:
         cout << "================= Tambah Barang ===================\n";

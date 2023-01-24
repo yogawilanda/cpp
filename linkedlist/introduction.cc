@@ -17,6 +17,7 @@ void insertFirst(Node *);
 void insetLast(Node *);
 void opsi4();
 
+int nomor1, nomor2, nomor3;
 
 int main()
 {
@@ -31,10 +32,15 @@ int main()
     two = (Node *)malloc(sizeof(Node));
     three = (Node *)malloc(sizeof(Node));
 
+    cin >> nomor1;
+    cin >> nomor2;
+    cin >> nomor3;
+
     /* Assign data values */
-    one->value = 1;
-    two->value = 2;
-    three->value = 3;
+    one->value = nomor1;
+    two->value = nomor2;
+    three->value = nomor3;
+
 
     /* Connect nodes */
     one->next = two;
