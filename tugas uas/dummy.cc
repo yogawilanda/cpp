@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -10,15 +11,25 @@ struct Database
     Database *Next;
 };
 
+struct NoDatabase
+{
+    int nimDB;
+    Database *NextDB;
+};
+
+
 Database *head, *tail, *cur, *newNode, *del;
+NoDatabase *headNDB, *tailNDB;
+
+
 
 void postSingleList(string nama, string jurusan, string tanggalLahir, int NIM)
 {
-    head = new Database;
+    headNDB = new NoDatabase;
     head->nama = nama;
     head->jurusan = jurusan;
     head->tanggalLahir = tanggalLahir;
-    head->nim = NIM;
+    headNDB->nimDB = NIM;
     head->Next = NULL;
     tail = head;
 };
@@ -52,6 +63,20 @@ void deleteNodeHead()
     delete del;
 }
 
+void deleteNodeTail()
+{
+    del = tail;
+    cur = head;
+    while (cur->Next != tail)
+    {
+        cur = cur->Next;
+    }
+    tail = cur;
+    tail->Next = NULL;
+
+    delete del;
+}
+
 void readList()
 {
     cur = head;
@@ -60,7 +85,8 @@ void readList()
     {
         cout << "Database masih kosong\n";
     }
-    else
+    
+    if (cur != NULL)
     {
         while (cur != NULL)
         {
@@ -74,6 +100,28 @@ void readList()
     }
 }
 
+void searchAndUpdate() {
+    cur = head;
+
+    if (cur == NULL)
+    {
+        cout << "User is not found or not yet created";
+    };
+
+    while (cur != NULL)
+    {
+        cin >> cur->nama;
+        cout << "Nama User: " << cur->nama << endl;
+            cout << "Jurusan: " << cur->jurusan << endl;
+            cout << "Tanggal Lahir: " << cur->tanggalLahir << endl;
+            cout << "NIM: " << cur->nim << endl
+                 << endl;
+            cur = cur->Next;
+            cur->Next = NULL;
+    }
+
+}
+
 int main()
 {
 
@@ -81,8 +129,15 @@ int main()
     string tanggalLahir;
     int NIM;
 
-    int pINT, isinsertLast;
-    char isdone;
+   
+
+    int pINT;
+    char isdone, isinsertLast;
+
+    cout << "========================================\n";
+    cout << "\t";
+    readList();
+    cout << "========================================\n\n";
     cout << "========================================\n";
     cout << "\t\tToko ATK\t\t\n";
     cout << "========================================\n";
@@ -108,21 +163,37 @@ int main()
 
         break;
     case 2:
-        cout << "================= Tambah Barang ===================\n"
+
+        system("cls");
+        cout << "================= Tambah Mahasiswa ===================\n"
              << "Masukan Nama : \n";
         cin >> nama;
-        cout << "Jurusan : \n";
-        cin >> jurusan;
-        cout << "Tanggal Lahir : \n";
-        cin >> tanggalLahir;
-        cout << "NIM : \n";
-        cin >> NIM;
+        // cout << "Jurusan : \n";
+        // cin >> jurusan;
+        // cout << "Tanggal Lahir : \n";
+        // cin >> tanggalLahir;
+        // cout << "NIM : \n";
+        // cin >> NIM;
 
-        cout << "Ingin memasukan pada antrian awal?";
+        cout << "Ingin memasukan pada antrian awal? (y/n)";
         cin >> isinsertLast;
 
-        (isinsertLast == 1) ? addNodeFirst(nama, jurusan, tanggalLahir, NIM) : addNodeLast(nama, jurusan, tanggalLahir, NIM);
-        main();
+        switch (isinsertLast)
+        {
+        case 'y':
+            addNodeFirst(nama, "jurusan", "tanggalLahir", 121412012);
+            // addNodeFirst("yoga", "rpl", "06061996", 12104141);
+            main();
+            break;
+        case 'n':
+            addNodeLast(nama, jurusan, tanggalLahir, NIM);
+            break;
+            main();
+
+        default:
+            break;
+        }
+
         break;
 
     case 3:
@@ -132,7 +203,12 @@ int main()
         break;
 
     case 4:
-        cout << "================= Cari Barang ===================\n";
+        cout << "================= Cari & Perbarui Barang ===================\n";
+        searchAndUpdate();
+        // cout << cur->nama << endl;
+        // cout << cur->jurusan << endl;
+        // cout << cur->tanggalLahir << endl;
+        // cout << cur->nim  + "\n";
         break;
     case 5:
         cout << "================= Transaksi ===================\n";
