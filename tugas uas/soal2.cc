@@ -3,7 +3,7 @@
 using namespace std;
 
 struct Database{
-string nama, jurusan, tanggalLahir;
+string nama, jenis, tanggalLahir;
 int  nim;
 
 Database *Next;
@@ -15,7 +15,7 @@ void postSingleList(string nama, string jurusan, string tanggalLahir, int NIM)
 {
     head = new Database;
     head->nama = nama;
-    head->jurusan = jurusan;
+    head->jenis = jurusan;
     head->tanggalLahir = tanggalLahir;
     head->nim = NIM;
     head->Next = NULL;
@@ -29,7 +29,7 @@ void readList()
     while (cur != NULL)
     {
         cout << "Nama User: " << cur->nama << endl;
-        cout << "Jurusan: " << cur->jurusan << endl;
+        cout << "Jurusan: " << cur->jenis << endl;
         cout << "Tanggal Lahir: " << cur->tanggalLahir << endl;
         cout << "NIM: " << cur->nim << endl << endl;
         cur = cur->Next;
