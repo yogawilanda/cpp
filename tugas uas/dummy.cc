@@ -27,6 +27,7 @@ int NIM;
 
 int pINT;
 char isdone, isinsertLast;
+int perhitungan = harga * kuota;
 
 // void postSingleList(string nama, string jenis, int kuota, int NIM)
 // {
@@ -38,6 +39,23 @@ char isdone, isinsertLast;
 //     head->Next = NULL;
 //     tail = head;
 // };
+
+void defaultStock()
+{
+    head = new Database;
+
+    head->nama = "pir";
+    head->jenis = "buah";
+    head->harga = 100;
+    head->kuota = 10;
+    head->Next = newNode;
+    cout << "Nama Produk: " << cur->nama
+         << "\tJenis Produk: " << cur->jenis
+         << "\tJumlah Produk:\t" << cur->kuota
+         << "\tHarga: \t" << cur->harga
+         << endl;
+    cur = cur->Next;
+}
 
 void addNodeFirst(string nama, string jenis, int harga, int kuota)
 {
@@ -85,11 +103,12 @@ void deleteNodeTail()
 
 void readList()
 {
+    // current = head of Node
     cur = head;
 
     if (cur == NULL)
     {
-        cout << "Database masih kosong\n";
+        // cout << "Database masih kosong\n";
     }
 
     if (cur != NULL)
@@ -128,8 +147,21 @@ void searchAndUpdate()
     }
 }
 
-void transaksiBarang()
+void transaksiBarang(Database *cur, string nama, int kuota)
 {
+    cout << "================= Transaksi ===================\n";
+    cout << "Masukan Produk yang ingin dibeli\n";
+
+    // cur->harga = harga;
+    // cur->kuota = kuota;
+
+    cin >> nama;
+    cin >> kuota;
+    // cin >> cur->kuota;
+
+    // perhitungan;
+
+    cout << "Harga totalnya adalah: " << cur;
 }
 
 void tambahBarangView()
@@ -153,13 +185,12 @@ void tambahBarangView()
     {
     case 'y':
         addNodeFirst(nama, jenis, harga, kuota);
-        // addNodeFirst("yoga", "rpl", "06061996", 12104141);
-        main();
         break;
     case 'n':
-        addNodeLast(nama, jenis, harga, kuota);
-        main();
-        break;
+        // addNodeLast(nama, jenis, harga, kuota);
+        defaultStock();
+        // main();
+        // break;
 
     default:
         break;
@@ -196,6 +227,7 @@ int main()
         break;
     case 2:
         tambahBarangView();
+        main();
         break;
 
     case 3:
@@ -212,9 +244,10 @@ int main()
         main();
         break;
     case 5:
-        cout << "================= Transaksi ===================\n";
-        cout << "Masukan Produk yang ingin dibeli\n";
+        transaksiBarang(cur, nama, kuota);
+        // main();
         break;
+
     case 6:
         cout << "Tekan enter 2 kali untuk keluar\n";
         break;
