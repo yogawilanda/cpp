@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -67,10 +68,11 @@ void addnewHeadDLL(string newHeadString[], int newHeadINT[])
 }
 
 // todo: create a standalone DLL
-
+string a;
 // data awal
 string newData[] = {
-    "Helion Bambangsyah",
+    // "Helion Bambangsyah",
+    a,
     "Dinomorphling",
     "Nedina Teja",
 };
@@ -96,9 +98,19 @@ int main()
 {
 
     int ya;
+
+    cin >> a;
+    // newData[0] = a;
+
+    // getline(cin, a);
+    newData[0] = a;
+
+    cout << endl;
     initDLL(newData, newINTData);
 
     printDLL();
+    cout << endl;
+    cout << endl;
 
     addnewHeadDLL(newHeadData, newHeadINTData);
 

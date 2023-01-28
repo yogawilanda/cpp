@@ -8,7 +8,7 @@ struct Database
     string nama, jenis;
     int harga, kuota;
 
-    Database *Next;
+Database *Next;
 };
 
 struct NoDatabase

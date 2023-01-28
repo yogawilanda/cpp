@@ -1,63 +1,133 @@
-#include <cstdlib>
+#include <Windows.h>
+#include <iomanip>
 #include <iostream>
-
+#include <string>
 using namespace std;
 
+
+// Struct untuk membuat framework data linked list
 struct Node
 {
-    int data;
-    struct Node *next;
+    int hargaStruct, kuotaStruct;
+    string namaBuahStruct;
+    Node *next;
 };
 
-void printAll(Node *temp)
+Node *head, *cur, *tail, *nodebaru, *delNode;
+
+int hargaInput, kuotaInput;
+string namaInput;
+char s;
+
+void loading()
 {
-    while (temp != NULL)
+    system("cls");
+    printf("\e[?25l");
+
+    // Set ASCII to print special character.
+    // Code page 437
+    SetConsoleCP(437);
+    SetConsoleOutputCP(437);
+
+    // untuk mengubah ascii code char sesuai codenya
+    int bar1 = 177, bar2 = 219;
+
+    cout << "\n\n\n\t\t\t\tLoading...";
+    cout << "\n\n\n\t\t\t\t";
+
+    for (int i = 0; i < 25; i++)
+        cout << (char)bar1;
+
+    cout << "\r";
+    cout << "\t\t\t\t";
+    for (int i = 0; i < 25; i++)
     {
-        cout << temp->data;
-        temp = temp->next;
+        cout << (char)bar2;
+        // atur durasi
+        Sleep(10);
     }
+
+    cout << "\n\t\t\t\t" << (char)1 << "!";
+    // system("Pause");
 }
 
-void initializeNode()
+// buat data/produknya
+void createData(string namaBuah, int kuotaCurINT, int hargaCurINT)
 {
 
-    int no1, no2, no3;
-    /* Initialize nodes */
-    struct Node *head;
-    struct Node *one = NULL;
-    struct Node *two = NULL;
-    struct Node *three = NULL;
+    nodebaru = new Node;
+    nodebaru->namaBuahStruct = namaBuah;
+    nodebaru->hargaStruct = kuotaCurINT;
+    nodebaru->kuotaStruct = hargaCurINT;
+    nodebaru->next = head;
+    head = nodebaru;
+}
 
-    /* Allocate memory */
-    one = (Node *)malloc(sizeof(Node));
-    two = (Node *)malloc(sizeof(Node));
-    three = (Node *)malloc(sizeof(Node));
+// hapus data yang ada
+void deleteData(Node *temp)
+{
+}
 
-    cin >> no1;
-    cin >> no2;
-    cin >> no3;
+// kalkulasi antar harga dan kuota dari node
+int kalkulasi(Node *temp, int x)
+{
+    return x;
+}
 
-    /* Assign data values */
-    one->data = no1;
-    two->data = no2;
-    three->data = no3;
+// cari data berdasarkan indexnya, lalu dapat mengupdate datanya sekaligus
+void searchUpdate(Node *temp)
+{
+}
+// tampilkan data dalam struk
+void showUser()
+// void showUser(Node *cur)
+{
+    cur = head;
 
-    /* Connect nodes */
-    one->next = two;
-    two->next = three;
-    three->next = NULL;
+    if (cur != NULL)
+    {
+        cout.widen(10);
+        cout << "     Nama\t"
+             << "Harga\t\t"
+             << "Stok\t\t" << endl;
+        while (cur != NULL)
+        {
+            cout.width(10);
+            cout.widen(10);
+            cout << cur->namaBuahStruct << "\t";
+            // cout.width(3);
+            cout << cur->hargaStruct << "\t\t";
+            cout << cur->kuotaStruct << "\t"
+                 << endl;
+            cur = cur->next;
+        }
+    }
 
-    /* Save address of first node in head */
-    head = one;
-    cout << "initialized List: ";
-    printAll(head);
+    // }
+}
+
+void cari();
+
+void clr()
+{
+    system("cls");
 }
 
 int main()
 {
+
+    int x;
+    char y;
+    string z;
+
+    string namaBuah;
     int pINT;
+    clr();
+
+    loading();
+    clr();
     cout << "========================================\n";
-    cout << "\t\tToko ATK\t\t\n";
+    cout << "\tAplikasi Kasir Toko Buah\t\n";
     cout << "========================================\n";
     cout << "Daftar Barang\n";
     cout << "1. Daftar Nama\n"
@@ -72,23 +142,59 @@ int main()
     switch (pINT)
     {
     case 1:
-        cout << "================= Daftar Barang ===================\n"
-             << "Masukkan Daftar Barang yang diinginkan";
-            initializeNode();
-             
+        clr();
+        cout << "================= Daftar Barang ===================\n";
+        showUser();
+
+        cout << "Kembali ke menu utama? (y/n)\n";
+        cin >> y;
+        if (y == 'y')
+        {
+            return main();
+        }
+
+        if (y != 'y')
+        {
+            cout << "Response tidak ditemukan kembali ke menu utama\n";
+            main();
+        }
 
         break;
+
     case 2:
-        cout << "================= Tambah Barang ===================\n";
+
+        while (y != 'y')
+        {
+            cout << "================= Tambah Barang ===================\n";
+            cout << "Masukkan Daftar Barang yang diinginkan\n";
+            cout << "Masukkan nama barang\n";
+            cin >> namaInput;
+            cout << "Masukkan harga barang";
+            cin >> hargaInput;
+            cout << "Masukkan kuota barang";
+            cin >> kuotaInput;
+
+            createData(namaInput, hargaInput, kuotaInput);
+            cout << "Kembali ke menu utama? (y/n)\n";
+            cin >> y;
+        }
+
+        main();
+
         break;
     case 3:
         cout << "================= Hapus Barang ===================\n";
+        deleteData(cur);
         break;
     case 4:
         cout << "================= Cari Barang ===================\n";
+        cari();
+        cout << "Kembali ke menu utama? (y/n)\n";
+
         break;
     case 5:
         cout << "================= Transaksi ===================\n";
+        kalkulasi(cur, 2);
         break;
     case 6:
         cout << "Tekan enter 2 kali untuk keluar\n";
@@ -98,3 +204,53 @@ int main()
         break;
     }
 };
+
+// function untuk mencari barang yang telah tersimpan di dalam data
+// dicari mulai dari cur->head, lalu di perkondisikan apabila cur tidak
+// null, maka lakukan transversal dengan metode while loop untuk
+// cek data yang tersimpan satu per satu hingga data ditemukan.
+// jika data ditemukan akan menampilkan datanya,
+// jika tidak akan menampilkan error
+void cari()
+{
+    // Node *cur;
+    cur = head;
+    string caridata;
+    int ketemu = 0;
+    if (cur != NULL)
+    {
+        cout << "\n Input Produk yang dicari\t: ";
+        cin >> caridata;
+        loading();
+        while (cur != NULL)
+        {
+            string a = cur->namaBuahStruct;
+            if (caridata == a)
+            {
+                cout << "\n\n>>>  Data Yang Anda Cari Ditemukan  <<<" << endl;
+                cout << "Nama\t: " << cur->namaBuahStruct << endl;
+                cout << "Saldo\t: " << cur->hargaStruct << endl;
+                cout << "Saldo\t: " << cur->kuotaStruct << endl;
+                cout << "===================================" << endl;
+                cout << "\n\n";
+                ketemu = 1;
+            }
+
+            // data akan hilang apabila node diubah
+            cur = cur->next;
+        }
+        if (ketemu == 0)
+        {
+            cout << " Data tidak ditemukan\n\n";
+        }
+    }
+    else
+    {
+        cout << " Belum ada nasabah!";
+    }
+    cout << "Kembali ke halaman utama?\n";
+    cin >> s;
+
+    (s == 'y') ? main() : main();
+    getchar();
+}

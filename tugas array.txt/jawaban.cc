@@ -19,17 +19,16 @@ string eco = "ekonomi",
        outPilihan = "Masukan nomor sesuai dengan pilihan\n";
 
 string jenisMaskapai[] = {
-    grd, lion, cl
-};
+    grd, lion, cl};
 
 string kelasMaskapai[] = {
-    busy, exe, eco,
+    busy,
+    exe,
+    eco,
 };
 
 string jamBerangkat[] = {
-  jam1, jam2, jam3, jam4
-};
-
+    jam1, jam2, jam3, jam4};
 
 int maskapai, kelas, jam, inputUser;
 
@@ -53,7 +52,6 @@ int hargaTotal[3][3][4] = {
     },
 
 };
-
 
 void testPrintArray(void);
 void OutHalaman(void);
@@ -116,46 +114,45 @@ int hargaLion[3][4] = {
     {750, 820, 120, 300},
 };
 
-
 void displayHarga()
 {
     int i, j, k;
     int hargaTotal[3][3][4] = {
-    {
-        {111, 112, 113, 114},
-        {121, 122, 123, 124},
-        {131, 132, 133, 134},
-    },
-    {
-        {211, 212, 213, 214},
-        {221, 222, 223, 224},
-        {231, 232, 233, 234},
-    },
-    {
-        {311, 312, 313, 314},
-        {321, 322, 323, 324},
-        {331, 332, 333, 334},
-    },
+        {
+            {111, 112, 113, 114},
+            {121, 122, 123, 124},
+            {131, 132, 133, 134},
+        },
+        {
+            {211, 212, 213, 214},
+            {221, 222, 223, 224},
+            {231, 232, 233, 234},
+        },
+        {
+            {311, 312, 313, 314},
+            {321, 322, 323, 324},
+            {331, 332, 333, 334},
+        },
 
-};
+    };
 
     cout << "Price List Penerbangan Lengkapan" << endl;
 
     // loop print tabel maskapai
-    for ( i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
     {
         // display jenis maskapai
         cout << "\tMaskapai " << jenisMaskapai[i] << "\n";
 
-        for ( j = 0; j < 3; j++)
-        {  
+        for (j = 0; j < 3; j++)
+        {
             // display kelas maskapai
             cout << kelasMaskapai[j] << "         \t";
 
             for (k = 0; k < 4; k++)
             {
-                
-                cout <<  hargaTotal[i][j][k] << "  ";
+
+                cout << hargaTotal[i][j][k] << "  ";
             }
 
             cout << endl;
@@ -163,7 +160,7 @@ void displayHarga()
 
         cout << endl;
     }
-    
+
     cout << endl;
 }
 
@@ -174,20 +171,20 @@ void testPrintArraywithmin2()
     cout << "Price List Penerbangan Lengkapan" << endl;
 
     // loop print tabel maskapai
-    for ( i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
     {
         // display jenis maskapai
         cout << "\tMaskapai " << jenisMaskapai[i] << "\n";
 
-        for ( j = 0; j < 3; j++)
-        {  
+        for (j = 0; j < 3; j++)
+        {
             // display kelas maskapai
             cout << kelasMaskapai[j] << "         \t";
 
             for (k = 0; k < 4; k++)
             {
-                
-                cout <<  hargaTotal[i][j][k] << "  ";
+
+                cout << hargaTotal[i][j][k] << "  ";
             }
 
             cout << endl;
@@ -195,7 +192,7 @@ void testPrintArraywithmin2()
 
         cout << endl;
     }
-    
+
     cout << endl;
 }
 
@@ -206,20 +203,20 @@ void priceListMaskapaidanJenis()
     cout << "Price List Penerbangan Lengkapan" << endl;
 
     // loop print tabel maskapai
-    for ( i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
     {
         // display array maskapai
         cout << "Maskapai " << jenisMaskapai[i] << "\n";
 
-        for ( j = 0; j < 3; j++)
-        {  
+        for (j = 0; j < 3; j++)
+        {
             // display kelas maskapai
             cout << kelasMaskapai[j] << "\t\t";
 
             for (k = 0; k < 4; k++)
             {
-                
-                cout <<  hargaTotal[i][j][k] << "  ";
+
+                cout << hargaTotal[i][j][k] << "  ";
             }
 
             cout << endl;
@@ -227,7 +224,7 @@ void priceListMaskapaidanJenis()
 
         cout << endl;
     }
-    
+
     cout << endl;
 }
 
@@ -239,15 +236,15 @@ void contekanOutput()
 
     cout << "Price List Seluruh Jadwal Penerbangan Hari Ini" << endl;
 
-    for ( i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
     {
         // display out dari array maskapai
         cout << "Maskapai " << jenisMaskapai[i] << "\n";
-        for ( j = 0; j < 3; j++)
+        for (j = 0; j < 3; j++)
         {
             for (k = 0; k < 4; k++)
             {
-                
+
                 cout << "[" << i + 1 << "][" << j + 1 << "][" << k + 1 << "] = " << hargaTotal[i][j][k] << "  ";
             }
             cout << endl;
@@ -295,7 +292,7 @@ void JadwalPemesanan()
     default:
         cout << "Anda tidak memilih apapun, kami akan mengarahkan anda ke menu utama"
              << "\nTekan apapun untuk kembali ke menu utama\n";
-    break;
+        break;
     }
     getchar();
     menuUtama();
