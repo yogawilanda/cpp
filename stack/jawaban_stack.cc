@@ -1,134 +1,134 @@
-// #include <iostream>
-// #include <stack>
+#include <iostream>
+#include <stack>
 
-// using namespace std;
+using namespace std;
 
-// char ulang;
-// int pilInt;
-// char pilChar;
-// string daftarNama, pilString;
-// stack<string> tempNama;
-// stack<string> antrianWQ;
-// stack<int> noAntrianWQ;
+char ulang;
+int pilInt;
+char pilChar;
+string daftarNama, pilString;
+stack<string> tempNama;
+stack<string> antrianWQ;
+stack<int> noAntrianWQ;
 
-// void inputManualQueue(void);
-// void display_queue(stack<string> ehe);
-// void qeueApp(void);
-// void clrScr(void);
-// void totalAntrian(void);
-
-
-// int main()
-// {
-// qeueApp();
-// }
+void inputManualQueue(void);
+void display_queue(stack<string> ehe);
+void qeueApp(void);
+void clrScr(void);
+void totalAntrian(void);
 
 
-
-// void display_queue(stack<string> st) {
-
-//   while(!st.empty()) {
-//     cout << st.top() << ", ";
-//     st.pop();
-//   }
-
-//   cout << endl;
-// }
+int main()
+{
+qeueApp();
+}
 
 
-// void totalAntrian()
-// {
-//     cout << "Total antrian yang ada : \n"
-//          << tempNama.size()
-//          << endl
-//          << "Ingin kembali ke menu utama? y/n";
 
-//     cin >> ulang;
-//     clrScr();
+void display_queue(stack<string> st) {
 
-//     (ulang == 'y') ? qeueApp() : totalAntrian();
-// }
+  while(!st.empty()) {
+    cout << st.top() << ", ";
+    st.pop();
+  }
 
-// void clrScr() { system("cls"); }
+  cout << endl;
+}
 
-// void display_queue(queue<string> displayTemp)
-// {
 
-//     while (!displayTemp.empty())
-//     {
-//         cout << displayTemp.front() << "\n";
-//         displayTemp.pop();
-//     }
+void totalAntrian()
+{
+    cout << "Total antrian yang ada : \n"
+         << tempNama.size()
+         << endl
+         << "Ingin kembali ke menu utama? y/n";
 
-//     cout << endl;
-// }
+    cin >> ulang;
+    clrScr();
 
-// void inputManualQueue()
-// {
-//     string i, j;
+    (ulang == 'y') ? qeueApp() : totalAntrian();
+}
 
-//     stack<int> nomorAntrian;
+void clrScr() { system("cls"); }
 
-//     cout << "Masukan nama pendaftar:";
-//     cin >> i;
-//     tempNama.push(i);
+void display_queue(queue<string> displayTemp)
+{
 
-//     for (int antrian = 0; antrian < 5; antrian++)
-//     {
-//         nomorAntrian.push(antrian);
-//         // nomorAntrian.pop();
-//     }
+    while (!displayTemp.empty())
+    {
+        cout << displayTemp.front() << "\n";
+        displayTemp.pop();
+    }
 
-//     // todo: fix nama harus berubah ketika update
-//     cout << "Nama : " << tempNama.top();
-//     cout << "\nUrutan : " << tempNama.size()
-//          << "\nStatus Pendaftaran: Sukses\n"
-//          << "\nIngin mengulang? y/n";
+    cout << endl;
+}
 
-//     cin >> ulang;
+void inputManualQueue()
+{
+    string i, j;
 
-//     (ulang == 'y') ? inputManualQueue() : qeueApp();
-// }
+    stack<int> nomorAntrian;
 
-// void qeueApp()
-// {
-//     antrianWQ.push(daftarNama);
+    cout << "Masukan nama pendaftar:";
+    cin >> i;
+    tempNama.push(i);
 
-//     cout << "Pelayanan Cek Kanker RS Sehat Itu Imajinasi\n"
-//          << "1. Daftar Antrian\n"
-//          << "2. Panggil Antrian\n"
-//          << "3. Cek Jumlah Antrian\n"
-//          << "4. Cek Seluruh Jumlah Antrian\n"
-//          << "Pilih menu sesuai nomor yang telah ditentukan\n";
+    for (int antrian = 0; antrian < 5; antrian++)
+    {
+        nomorAntrian.push(antrian);
+        // nomorAntrian.pop();
+    }
 
-//     cin >> pilInt;
+    // todo: fix nama harus berubah ketika update
+    cout << "Nama : " << tempNama.top();
+    cout << "\nUrutan : " << tempNama.size()
+         << "\nStatus Pendaftaran: Sukses\n"
+         << "\nIngin mengulang? y/n";
 
-//     switch (pilInt)
-//     {
+    cin >> ulang;
 
-//     case 1:
-//         cout << "Daftar Antrian\n";
-//         inputManualQueue();
+    (ulang == 'y') ? inputManualQueue() : qeueApp();
+}
 
-//         break;
-//     case 2:
-//         cout << "Cek Antrian\n";
-//         cout <<  tempNama.front() << endl;
-//         tempNama.pop();
+void qeueApp()
+{
+    antrianWQ.push(daftarNama);
+
+    cout << "Pelayanan Cek Kanker RS Sehat Itu Imajinasi\n"
+         << "1. Daftar Antrian\n"
+         << "2. Panggil Antrian\n"
+         << "3. Cek Jumlah Antrian\n"
+         << "4. Cek Seluruh Jumlah Antrian\n"
+         << "Pilih menu sesuai nomor yang telah ditentukan\n";
+
+    cin >> pilInt;
+
+    switch (pilInt)
+    {
+
+    case 1:
+        cout << "Daftar Antrian\n";
+        inputManualQueue();
+
+        break;
+    case 2:
+        cout << "Cek Antrian\n";
+        cout <<  tempNama.front() << endl;
+        tempNama.pop();
         
-//         // break;
+        // break;
 
-//     case 3:
-//         cout << "Jumlah Antrian\n";
-//         totalAntrian();
-//         break;
-//     case 4:
-//         cout << "Cek Antrian\n";
-//         display_queue(tempNama);
-//         break;
+    case 3:
+        cout << "Jumlah Antrian\n";
+        totalAntrian();
+        break;
+    case 4:
+        cout << "Cek Antrian\n";
+        display_queue(tempNama);
+        break;
 
-//     default:
-//         break;
-//     }
-// }
+    default:
+        break;
+    }
+}
 

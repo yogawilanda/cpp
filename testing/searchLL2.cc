@@ -27,7 +27,7 @@ void ins()
     cin >> n;
     cout<<" Input alamat\t\t: ";
     // getline(cin,asal);
-    cin >> asal
+    cin >> asal;
     cout<<" Input saldo awal\t: ";
     cin>>isi;
 	temp->norek=nr;

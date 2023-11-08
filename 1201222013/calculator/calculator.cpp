@@ -7,6 +7,22 @@ void kalkulasi() {
     int angka2;
     char pilihan;
 
+
+    string outJudul = "Kalkulator C++ Sederhana";
+    string outJumlah = "1. Ketik + untuk Pertambahan";
+    string outKurang = "2. Ketik - untuk Pengurangan";
+    string outKali = "3. Ketik * untuk Perkalian";
+    string outBagi = "4. Ketik / untuk Pembagian";
+    string outPilihan = "----Masukan Pilihan Anda----";
+
+    cout <<  outJudul << endl;
+    cout << outJumlah  << endl;
+    cout << outKurang  << endl;
+    cout << outBagi << endl;
+    cout << outKali << endl;
+    
+    cout << outPilihan << endl;
+
     cin >> pilihan;
 
     switch (pilihan)
@@ -43,20 +59,7 @@ void kalkulasi() {
 }
 
 int main() {
-    string outJudul = "Kalkulator C++ Sederhana";
-    string outJumlah = "1. Ketik + untuk Pertambahan";
-    string outKurang = "2. Ketik - untuk Pengurangan";
-    string outKali = "3. Ketik * untuk Perkalian";
-    string outBagi = "4. Ketik / untuk Pembagian";
-    string outPilihan = "----Masukan Pilihan Anda----";
-
-    cout <<  outJudul << endl;
-    cout << outJumlah  << endl;
-    cout << outKurang  << endl;
-    cout << outBagi << endl;
-    cout << outKali << endl;
     
-    cout << outPilihan << endl;
     kalkulasi();
 
     return 0;
